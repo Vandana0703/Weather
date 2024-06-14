@@ -51,6 +51,7 @@ img {
 /* location-and-date */
 .location-and-date {
   width: 100%;
+  padding: 20px 0px;
 }
 
 .location-and-date__location {
@@ -137,7 +138,45 @@ img {
   }
 }
 
+/*feedback-modal */
+.modal-header{
+  color: black !important;
+}
 
+/* feedback-from */
+.feedback-form textarea{
+  padding:20px 50px;
+  width:100%
+}
+.feedback-form div
+{
+  color:red;
+  float:left;
+}
+.feedback-form button
+{
+  border: 2px solid;
+  color: white;
+  border-radius:5px;
+  float:right;
+  width:30%;
+  background-color:#0d6efd;
+  border-color: white;
+}
+
+/* FeedbackPage */
+.cardClass{
+  background-color: grey;
+  width:25vw;
+  height:20vh;
+   background-repeat: no-repeat;
+  background-size:cover;
+  margin-left: 40%;
+  margin-top: 30px;
+}
+.d-flex.col{
+  padding: 10px 10px;
+}
 
 /* weather-by-hour */
 .weather-by-hour {

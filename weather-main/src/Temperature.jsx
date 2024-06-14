@@ -10,10 +10,13 @@ import night from './animated/night.svg'
 
 
 function Temperature({ data }) {
-  const [rain, setRain] = useState(data.daily.rain_sum[0] * 10)
-  const [image, setImage] = useState(rainy1)
-  const [text, setText] = useState('sunny')
+  const [rain, setRain] = useState(null);
+  const [image, setImage] = useState(null);
+  const [text, setText] = useState(null);
 
+  useEffect(()=>{
+    setRain(data.daily.rain_sum[0] * 10)
+  },[data]);
 
   useEffect(() => {
     if(rain > 60){
@@ -35,10 +38,9 @@ function Temperature({ data }) {
     if(data.current_weather.is_day === 0){
       setImage(night)
       setText('Night')
-      
     }
-  })
-  
+  },[data,rain]);
+
   return (
     <div className="current-temperature">
       <div className="current-temperature__icon-container">
@@ -52,6 +54,6 @@ function Temperature({ data }) {
       </div>
     </div>
   );
-}
+};
 
-export default Temperature
+export default Temperature;
