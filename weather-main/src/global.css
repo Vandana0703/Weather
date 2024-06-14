@@ -5,14 +5,17 @@
 }
 
 body {
-  margin: 12px;
+  /* margin: 12px; */
   font-size: 100%;
   font-family: 'Open Sans', sans-serif;
   color: white !important;
-  height: 100%;
+  min-height: 100vh;
   background: linear-gradient(to bottom, rgb(43, 138, 178) 0%, rgb(20,136,204) 100%);
   background-repeat: no-repeat;
   background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  /* overflow: hidden; */
 }
 img {
    user-select: none;
@@ -23,7 +26,7 @@ img {
 }
 @media screen and (min-width: 700px) {
   body {
-    margin: 20px;
+    /* margin: 20px; */
   }
 }
 .header{
@@ -50,8 +53,9 @@ img {
 
 /* location-and-date */
 .location-and-date {
-  width: 100%;
+  width: 80%;
   padding: 20px 0px;
+  margin: auto;
 }
 
 .location-and-date__location {
@@ -68,6 +72,7 @@ img {
   align-items: center;
   margin-top: 0.25em;
   width: 100%;
+  margin: auto;
 }
 
 .current-temperature__icon-container {
@@ -110,6 +115,7 @@ img {
   width: 100%;
   border-top: 1px solid rgba(255,255,255,0.5);
   border-bottom: 1px solid rgba(255,255,255,0.5);
+  margin: auto;
 }
 
 @media screen and (min-width: 700px) {
@@ -118,7 +124,7 @@ img {
     padding-bottom: 0;
     border-top: none;
     border-bottom: none;
-    border-left: 1px solid rgba(255,255,255,0.5);
+    /* border-left: 1px solid rgba(255,255,255,0.5); */
   }
 }
 
@@ -138,12 +144,37 @@ img {
   }
 }
 
-/*feedback-modal */
-.modal-header{
-  color: black !important;
+/* side navbar */
+body {
+  color: white;
 }
 
-/* feedback-from */
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.Main {
+  min-height: 100vh;
+  background: black !important;
+}
+
+.grid_container{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  width: 100%;
+  height: 100%;
+}
+
+.Main .bg-dark{
+  background-color: black !important;
+}
+
+/*feedback-modal */
+
+.modal-title{
+  color: black;
+}
 .feedback-form textarea{
   padding:20px 50px;
   width:100%
@@ -165,67 +196,9 @@ img {
 }
 
 /* FeedbackPage */
-.cardClass{
-  background-color: grey;
-  width:25vw;
-  height:20vh;
-   background-repeat: no-repeat;
-  background-size:cover;
-  margin-left: 40%;
-  margin-top: 30px;
-}
+
 .d-flex.col{
   padding: 10px 10px;
-}
-
-/* weather-by-hour */
-.weather-by-hour {
-  display: none;
-  width: 100%;
-}
-
-@media screen and (min-width: 700px) {
-  .weather-by-hour {
-    display: block;
-  }
-}
-
-.weather-by-hour__container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.weather-by-hour__heading,
-.next-5-days__heading {
-  color: rgba(255,255,255,0.8);
-  font-size: 1em;
-  font-weight: normal;
-}
-
-@media screen and (min-width: 768px) {
-  .weather-by-hour__heading,
-  .next-5-days__heading {
-    font-size: 1.125em;
-  }
-}
-
-.weather-by-hour__item {
-  padding: 0.8em 0;
-  width: 13%;
-  border-radius: 5px;
-  background-color: rgba(0,0,0,0.15);
-  font-size: 1.125em;
-  text-align: center;
-}
-
-@media screen and (min-width: 880px) {
-  .weather-by-hour__item {
-    width: 6.05em;
-  }
-}
-
-.weather-by-hour__hour {
-  margin-bottom: 0.5em;
 }
 
 

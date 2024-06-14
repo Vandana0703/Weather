@@ -5,23 +5,22 @@ import Col from 'react-bootstrap/Col';
 import { connect } from 'react-redux';
 
 function _FeedbackPage(props) {
-    const {feedbackData} = props;
+    const { feedbackData } = props;
 
-    const [feedbackList,setFeedbackList]=useState([]);
+    const [feedbackList, setFeedbackList] = useState([]);
 
-    useEffect(()=>{
+    useEffect(() => {
         setFeedbackList(feedbackData);
-    },[feedbackData])
+    }, [feedbackData])
 
-    // console.log("FEED=",feedbackList);
     return (
         <div>
             <h1 >Weather Stories from Users</h1>
             <Row lg={3} >
                 {feedbackList &&
                     feedbackList.map((feedback) => {
-                        const { id,  description } =
-                        feedback;
+                        const { id, description } =
+                            feedback;
                         return (
                             <Col className="d-flex">
                                 <Card className="flex-fill" key={id}>
@@ -37,11 +36,10 @@ function _FeedbackPage(props) {
     )
 }
 
-function mapStateToProps(storeState){
-    console.log("STA=",storeState);
-    return{
+function mapStateToProps(storeState) {
+    return {
         feedbackData: storeState.weather.feedbackData
     }
 }
-const FeedbackPage=connect(mapStateToProps)(_FeedbackPage);
-export {FeedbackPage};
+const FeedbackPage = connect(mapStateToProps)(_FeedbackPage);
+export { FeedbackPage };

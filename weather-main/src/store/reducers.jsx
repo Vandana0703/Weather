@@ -1,4 +1,4 @@
-import { feedbackData } from "../MockupData";
+import { feedbackData, weatherDataList } from "../MockupData";
 import {
     FETCH_WEATHER_REQUEST,
     FETCH_WEATHER_SUCCESS,
@@ -10,7 +10,7 @@ import {
   // Stato iniziale
   const initialState = {
     loading: false,
-    weatherData: null,
+    weatherData: weatherDataList[0],
     error: null,
     feedbackData: feedbackData
   };

@@ -14,32 +14,32 @@ function Temperature({ data }) {
   const [image, setImage] = useState(null);
   const [text, setText] = useState(null);
 
-  useEffect(()=>{
+  useEffect(() => {
     setRain(data.daily.rain_sum[0] * 10)
-  },[data]);
+  }, [data]);
 
   useEffect(() => {
-    if(rain > 60){
+    if (rain > 60) {
       setImage(rainy5)
       setText('Thunderstorms')
-    }else if(rain > 40){
+    } else if (rain > 40) {
       setImage(rainy4)
       setText('Cloudy')
-    }else if(rain > 20){
+    } else if (rain > 20) {
       setImage(rainy3)
       setText('Rainy')
-    }else if(rain > 0) {
+    } else if (rain > 0) {
       setImage(rainy2)
       setText('Partly Sunny')
     } else {
       setImage(rainy1)
       setText('Sunny')
     }
-    if(data.current_weather.is_day === 0){
+    if (data.current_weather.is_day === 0) {
       setImage(night)
       setText('Night')
     }
-  },[data,rain]);
+  }, [data, rain]);
 
   return (
     <div className="current-temperature">

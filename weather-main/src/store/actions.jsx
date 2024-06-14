@@ -19,6 +19,7 @@ export const fetchWeatherRequest = () => {
 
 // Azione per gestire la risposta di successo
 export const fetchWeatherSuccess = (weatherData) => {
+  // console.log("w")
   return {
     type: FETCH_WEATHER_SUCCESS,
     payload: weatherData,
